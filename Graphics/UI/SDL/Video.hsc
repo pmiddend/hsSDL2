@@ -109,6 +109,7 @@ module Graphics.UI.SDL.Video
 
   , videoInit
   , videoQuit
+  , windowPosUndefined
   ) where
 
 import Control.Applicative
@@ -757,3 +758,7 @@ foreign import ccall unsafe "SDL_VideoInit"
 --------------------------------------------------------------------------------
 foreign import ccall unsafe "SDL_VideoQuit"
   videoQuit :: IO ()
+
+windowPosUndefined :: (Num a) => a
+
+windowPosUndefined = (#const SDL_WINDOWPOS_UNDEFINED)
